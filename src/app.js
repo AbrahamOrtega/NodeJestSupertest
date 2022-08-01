@@ -13,6 +13,7 @@ app.get('/tasks', (req, res) => {
 })
 
 app.post('/tasks', (req, res) => {
+    console.log(req.body);
     const {title, description} = req.body;
     if (!title || !description) return res.status(400).send('Title and description are required');
     res.json({
